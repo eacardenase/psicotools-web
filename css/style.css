@@ -1,0 +1,254 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+    /* dark shades of primary color*/
+    --clr-primary-1: #065e77;
+    --clr-primary-2: #1bb1dc;
+    --clr-white: #fff;
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
+    --transition: all 0.3s linear;
+    --spacing: 0.25rem;
+    --radius: 0.5rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+}
+
+/* Global Styles */
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Banks&Miles";
+    src: url("/fonts/Banks&MilesSingleLine.ttf");
+}
+
+body {
+    background: var(--clr-white);
+    color: #444;
+    font-family: "Banks&Miles", sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: var(--clr-primary-2);
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #0a98c0;
+    outline: none;
+    text-decoration: none;
+}
+
+p {
+    padding: 0;
+    margin-bottom: 1.25rem;
+}
+
+img:not(.nav-logo) {
+    width: 100%;
+    display: block;
+}
+
+.nav-logo {
+    width: 170px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Banks&Miles", sans-serif;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.25rem;
+}
+h4 {
+    font-size: 0.875rem;
+}
+
+.section-center {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1170px;
+}
+
+/* 
+===============
+Navbar
+===============
+*/
+
+.nav-links {
+    display: none;
+}
+
+.nav {
+    height: 5rem;
+    padding: 1rem;
+    display: grid;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.nav-center {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.nav-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+.nav-btn {
+    background: transparent;
+    border: transparent;
+    color: var(--clr-primary-1);
+    font-size: 2rem;
+    cursor: pointer;
+    justify-self: end;
+}
+
+@media screen and (min-width: 768px) {
+    .nav {
+        background: var(--clr-white);
+    }
+    .nav-btn {
+        display: none;
+    }
+    .nav-links {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        justify-items: center;
+        column-gap: 1.5rem;
+        justify-self: end;
+    }
+
+    .nav-links a {
+        text-transform: capitalize;
+        font-weight: bold;
+        letter-spacing: var(--spacing);
+        transition: var(--transition);
+        color: var(--clr-primary-1);
+    }
+
+    .nav-links a:hover {
+        color: var(--clr-primary-2);
+    }
+
+    .nav-center {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+    }
+}
+
+/* 
+===============
+Sidebar
+===============
+*/
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #302e4d;
+    z-index: 4;
+    display: grid;
+    place-items: center;
+    transition: var(--transition);
+    transform: translate(-100%);
+}
+
+.show-sidebar {
+    transform: translate(0);
+}
+
+.sidebar-links {
+    text-align: center;
+}
+
+.sidebar-links a {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    transition: var(--transition);
+    color: var(--clr-white);
+    letter-spacing: var(--spacing);
+    display: inline-block;
+    margin-bottom: 1.25rem;
+}
+
+.sidebar-links a:hover {
+    color: var(--clr-primary-2);
+}
+
+.social-icons {
+    display: grid;
+    margin-top: 3rem;
+    width: 20rem;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: var(--clr-white);
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    color: var(--clr-primary-2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+    font-size: 2.5rem;
+    background: transparent;
+    border: transparent;
+    color: var(--clr-white);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    transform: scale(1.1);
+    color: var(--clr-primary-2);
+}
